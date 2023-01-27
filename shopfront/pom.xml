@@ -57,6 +57,12 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
+        <!-- Test -->
+        <dependency>
+            <groupId>com.oracle.apm.agent.java</groupId>
+            <artifactId>apm-java-agent-tracer</artifactId>
+            <version>[1.5.2118,)</version>
+        </dependency>
     </dependencies>
 
     <build>

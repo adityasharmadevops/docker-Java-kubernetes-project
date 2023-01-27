@@ -13,7 +13,7 @@ spec:
   - protocol: TCP
     port: 8020
     name: http
-
+    nodePort: 30080
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -31,7 +31,7 @@ spec:
     spec:
       containers:
       - name: productcatalogue
-        image: thetips4you/productcatalogue:latest
+        image: iad.ocir.io/id12tc2u6ntl/java-project/productcatalogue:latest
         ports:
         - containerPort: 8020
         livenessProbe:

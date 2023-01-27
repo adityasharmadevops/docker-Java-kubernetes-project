@@ -13,6 +13,7 @@ spec:
   - protocol: TCP
     port: 8010
     name: http
+    nodePort: 30081
 
 ---
 apiVersion: apps/v1
@@ -31,7 +32,7 @@ spec:
     spec:
       containers:
       - name: shopfront
-        image: thetips4you/shopfront:latest
+        image: iad.ocir.io/id12tc2u6ntl/java-project/shopfront:latest
         ports:
         - containerPort: 8010
         livenessProbe:

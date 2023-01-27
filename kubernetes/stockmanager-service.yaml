@@ -13,6 +13,7 @@ spec:
   - protocol: TCP
     port: 8030
     name: http
+    nodePort: 30082
 
 ---
 apiVersion: apps/v1
@@ -32,7 +33,7 @@ spec:
     spec:
       containers:
       - name: stockmanager
-        image: thetips4you/stockmanager:latest
+        image: iad.ocir.io/id12tc2u6ntl/java-project/stockmanager:latest
         ports:
         - containerPort: 8030
         livenessProbe:

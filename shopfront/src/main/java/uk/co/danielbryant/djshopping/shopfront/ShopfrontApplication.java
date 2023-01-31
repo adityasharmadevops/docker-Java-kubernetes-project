@@ -15,6 +15,7 @@ import org.springframework.web.client.RestTemplate;
 public class ShopfrontApplication {
 
     public static void main(String[] args) {
+        try{
         Tracer tracer = new ApmTracer.Builder("mytraceA", "APM RUM PROJECT")
                     .withMicrosecondAccurateTimestamp(true)
                     .withCollectMetrics(true)
@@ -30,6 +31,10 @@ public class ShopfrontApplication {
                     .start();
             Thread.sleep(2000);
             span.finish();
+        }
+        catch(Exception e){
+           e.printStackTrace();
+        }
         SpringApplication.run(ShopfrontApplication.class, args);
     }
 

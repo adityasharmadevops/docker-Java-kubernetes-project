@@ -16,7 +16,7 @@ public class ShopfrontApplication {
 
     public static void main(String[] args) {
         try{
-        Tracer tracer = new ApmTracer.Builder("mytraceA", "APM RUM PROJECT")
+        Tracer tracer = new ApmTracer.Builder("mytraceA", "APM Tracing Project")
                     .withMicrosecondAccurateTimestamp(true)
                     .withCollectMetrics(true)
                     .withCollectResources(true)

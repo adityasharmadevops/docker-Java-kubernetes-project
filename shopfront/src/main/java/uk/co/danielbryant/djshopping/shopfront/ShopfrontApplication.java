@@ -15,16 +15,7 @@ import org.springframework.web.client.RestTemplate;
 public class ShopfrontApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(ShopfrontApplication.class, args);
-    }
-
-    @Bean(name = "stdRestTemplate")
-    public RestTemplate getRestTemplate() {
-        return new RestTemplate();
-    }
-}
-
-Tracer tracer = new ApmTracer.Builder("mytraceA", "APM RUM PROJECT")
+        Tracer tracer = new ApmTracer.Builder("mytraceA", "APM RUM PROJECT")
                     .withMicrosecondAccurateTimestamp(true)
                     .withCollectMetrics(true)
                     .withCollectResources(true)
@@ -37,8 +28,13 @@ Tracer tracer = new ApmTracer.Builder("mytraceA", "APM RUM PROJECT")
             //GlobalTracer.register(tracer);
             Span span = tracer.buildSpan("myspan_withdelay")
                     .start();
-            
-
             Thread.sleep(2000);
-
             span.finish();
+        SpringApplication.run(ShopfrontApplication.class, args);
+    }
+
+    @Bean(name = "stdRestTemplate")
+    public RestTemplate getRestTemplate() {
+        return new RestTemplate();
+    }
+}

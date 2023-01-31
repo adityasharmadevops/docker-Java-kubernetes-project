@@ -30,7 +30,6 @@ Tracer tracer = new ApmTracer.Builder("mytraceA", "APM RUM PROJECT")
                     .withCollectResources(true)
                     .withDataUploadEndpoint("https://aaaadboo7t2z4aaaaaaaaabzjq.apm-agt.us-ashburn-1.oci.oraclecloud.com")
                     .withProperty("com.oracle.apm.agent.private.data.key", "BDEHKOB55OD4HY4RMACS35YFA4J5GSYU")
-                    
                     .withProperty("com.oracle.apm.agent.data.upload.file","observations.log")
                     .withProperty("com.oracle.apm.agent.data.upload.proxy.url","http://www-proxy-hqdc.us.oracle.com:80")
                     .build();
